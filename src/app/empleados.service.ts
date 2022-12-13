@@ -20,4 +20,20 @@ export class EmpleadosService{
         this.servicioVentanaEmergente.muestraMensaje("Se agrega: "+"\n"+ empleado.nombre + "\n" + "Sueldo: $" + empleado.sueldo);
         this.empleados.push(empleado);
       }
-}
+      
+      encontrarEmpleado(indice:number){
+        let empleado:Empleado=this.empleados[indice];
+        return empleado;
+      }
+
+      actualizarEmpleadoServicio(indice:number, empleado:Empleado){
+        let empladoModificado = this.empleados[indice];
+        empladoModificado.nombre=empleado.nombre;
+        empladoModificado.apellido=empleado.apellido;
+        empladoModificado.cargo=empleado.cargo;
+        empladoModificado.sueldo=empleado.sueldo; 
+
+      }
+
+
+    }

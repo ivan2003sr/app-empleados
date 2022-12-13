@@ -1,23 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Empleado } from '../empleado.model';
+import { EmpleadosService } from '../empleados.service';
+
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class AppComponent implements OnInit {
+export class HomeComponent {
+
   titulo = 'Listado de Empleados';
 
-  constructor(/*private miServicio:ServicioEmpleadosService, private empleadosService:EmpleadosService*/){
-   // this.empleados=this.empleadosService.empleados;
+  constructor(private empleadosService:EmpleadosService){
   }
   ngOnInit(): void {
-    //this.empleados=this.empleadosService.empleados;
+    this.empleados=this.empleadosService.empleados;
   }
-  /*
   empleados!:Empleado[];
-
-  
 
   agregarEmpleado(){
     let miEmpleado= new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSueldo);
@@ -29,5 +29,5 @@ export class AppComponent implements OnInit {
   cuadroNombre:string="";
   cuadroApellido:string="";
   cuadroCargo:string="";
-  cuadroSueldo:number=0;*/
+  cuadroSueldo:number=0;
 }
