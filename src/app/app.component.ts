@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import firebase from 'firebase/compat/app'
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,12 @@ export class AppComponent implements OnInit {
    // this.empleados=this.empleadosService.empleados;
   }
   ngOnInit(): void {
+    firebase.initializeApp({
+      
+      apiKey: "AIzaSyDVZo-PRgO6n5gLRpF8s4TRosWdyH3TcJI",
+      authDomain: "clientes-db4d2.firebaseapp.com",
+
+    })
     //this.empleados=this.empleadosService.empleados;
   }
   /*

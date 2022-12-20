@@ -2,12 +2,15 @@
     <div class="row">
       <div class="col">
         <div>
-          <a [routerLink]="['/actualizar', indice+1]">
+          <br/>
           {{indice+1 +": "}}{{empleadoDeLista.nombre}}
           {{empleadoDeLista.apellido}}
           {{empleadoDeLista.cargo}}
-          {{"$"+(empleadoDeLista.sueldo)}}
-        </a>
+          {{"$"+(empleadoDeLista.sueldo)}}       
+          &nbsp;
+          <a [routerLink]="['/actualizar', indice+1]" [queryParams]="{accion:'actualizar'}">Actualizar</a>
+          &nbsp;&nbsp;&nbsp;
+          <a [routerLink]="['/actualizar', indice+1]" [queryParams]="{accion:'eliminar'}">Eliminar</a>
         </div>
         <ul style="list-style: none;">
           <li *ngFor="let caracteristica of arrayCaracteristicas">{{caracteristica}}</li>
