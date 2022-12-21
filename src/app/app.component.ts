@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import firebase from 'firebase/compat/app'
+import { LoginService } from './login/login.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import firebase from 'firebase/compat/app'
 export class AppComponent implements OnInit {
   titulo = 'Listado de Empleados';
 
-  constructor(/*private miServicio:ServicioEmpleadosService, private empleadosService:EmpleadosService*/){
+  constructor(/*private miServicio:ServicioEmpleadosService, private empleadosService:EmpleadosService*/private loginService:LoginService){
    // this.empleados=this.empleadosService.empleados;
   }
   ngOnInit(): void {
@@ -37,4 +38,12 @@ export class AppComponent implements OnInit {
   cuadroApellido:string="";
   cuadroCargo:string="";
   cuadroSueldo:number=0;*/
+
+  isLogged(){
+    return this.loginService.isLogged();
+  }
+
+  logout(){
+    return this.loginService.logout();
+  }
 }
